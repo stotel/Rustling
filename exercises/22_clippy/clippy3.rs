@@ -7,17 +7,14 @@ fn main() {
     let my_option: Option<&str> = None;
     // Assume that you don't know the value of `my_option`.
     // In the case of `Some`, we want to print its value.
-    if my_option.is_none() {
-        println!("{}", my_option.unwrap());
+    if let Some(val) = my_option {
+        println!("{}", val);
     }
 
-    let my_arr = &[
-        -1, -2, -3
-        -4, -5, -6
-    ];
+    let my_arr = &[-1, -2, -3, -4, -5, -6];
     println!("My array! Here it is: {my_arr:?}");
 
-    let my_empty_vec = vec![1, 2, 3, 4, 5].resize(0, 5);
+    let my_empty_vec: Vec<i32> = Vec::new();
     println!("This Vec is empty, see? {my_empty_vec:?}");
 
     let mut value_a = 45;
